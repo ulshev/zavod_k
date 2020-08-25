@@ -1,0 +1,357 @@
+/* start forms styles */ 
+
+#main_form {
+	z-index: 2;
+	overflow: visible;
+
+    .page_width {
+		padding-top: 10px;
+		padding-bottom: 85px;
+		text-align: center;
+	
+		// &::before {
+		// 	content: '';
+		// 	display: block;
+		// 	float: left;
+		// 	width:  515/1530*100%;
+		// 	height: 536px;
+		// 	background: url(images/bg_main_form.jpg) center center no-repeat;
+		// 	background-size: 100% auto;
+		// }
+    }
+    
+    
+    h2 {
+		margin-bottom: 8px;
+	}
+	h2 + p {
+		margin-bottom: 35px;
+	}
+}
+
+.form_block {
+	.gUniFormStatic {
+		max-width: 1000px;
+		margin: 0 auto 10px;
+	}
+
+    .input_text {
+		width: calc(50% - 20px);
+		clear: left;
+		float: left;
+		margin: 0 10px 15px;
+		position: relative;
+	}
+	.input_text, .textarea {
+		label {
+			display: block;
+			position: absolute;
+			width: 98%;
+			z-index: 1;
+			height: 44px;
+			top: 8px;
+			left: 1%;
+			background: linear-gradient(0deg, #FC00FF 0%, #0057FF 100%);
+			filter: blur(10px);
+			border-radius: 10px;
+			opacity: 0;
+			@include transition(all);
+		
+		}
+		input:hover + label, input:focus + label, textarea:hover + label, textarea:focus + label {
+			opacity: 1;
+			
+		}
+	}
+	.textarea {
+		//float: right;
+		margin-left: calc(50% + 10px);
+		margin-right: 10px;
+		position: relative;
+
+		label {
+			height: 195px;
+		}
+	}
+	
+
+
+    input[type="text"], textarea {
+		padding: 10px 30px 10px 56px;
+		height: 60px;
+		width: 100%;
+		max-width: 100%;
+		background: #FFFFFF no-repeat 20px center;
+		border: 1px solid #D9E8FA;
+		box-sizing: border-box;
+		border-radius: 10px;
+		color: #000;
+		font-family: $font_family_os;
+		font-size: 16px;
+		line-height: 40px;
+		font-weight: 300;
+		vertical-align: top;
+		position: relative;
+		z-index: 2;
+		
+		&::-webkit-input-placeholder {opacity: 0.5; color: #333333;}
+		&::-moz-placeholder          {opacity: 0.5; color: #333;}/* Firefox 19+ */
+		&:-moz-placeholder           {opacity: 0.5; color: #333;}/* Firefox 18- */
+		&:-ms-input-placeholder      {opacity: 0.5; color: #333;}
+    }
+	input {
+		&.name {
+			background-image: url(images/icon_name.png);
+		}
+		&.phone {
+			background-image: url(images/icon_phone.png);
+		}
+		&.email {
+			background-image: url(images/icon_email.png);
+		}
+	}
+	textarea.message {
+		background-image: url(images/icon_message.png);
+		background-position: 20px 20px;
+	}
+    textarea {
+		height: 210px;
+		width: 100%;
+		line-height: 22px;
+		padding-top: 20px;
+		resize: none;
+    }
+    
+    .input_file {
+		display: inline-block;
+		vertical-align: middle;
+		position: relative;
+		margin-right: 20px;
+		margin-left: 10px;
+		margin-bottom: 30px;
+    }
+    
+    input[type="file"] {
+		position: absolute;
+		z-index: 0;
+		opacity: 0;
+	}
+	
+	input[type="file"] +label {
+		position: relative;
+		z-index: 2;
+		font-weight: 400;
+		
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			vertical-align: -1px;
+			margin-right: 10px;
+			background: url(images/icon_plus.png) no-repeat center;
+		}
+    }
+    
+    .check {
+		position: relative;
+		// font-weight: 300;
+		// font-size: 14px;
+		// line-height: 20px;
+		// display: inline-block;
+		// vertical-align: top;
+		// width: 46%;  
+		// padding-left: 34px;
+		// margin-right: 20px;
+		// opacity: 0.8;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+		width: auto;
+		height: auto;
+		margin-bottom: 0;
+		opacity: 0;
+		margin-left: -2px;
+		position: absolute;
+		margin-right: 0;
+    }
+
+    input[type="checkbox"]:not(checked) + label {
+		//position: relative;
+		cursor: pointer;
+		margin: 20px 10px 35px;
+		display: inline-block;
+		text-align: left;
+		font-size: 14px;
+		line-height: 107.68%;
+		@include transition(all);
+		
+		&:before {
+			content: '';
+			width: 10px;
+			height: 10px;
+			background: #fff;
+			border: 1px solid #2FB3E4;
+			box-sizing: border-box;
+			//border-radius: 2px;
+			position: absolute;
+			left: 0px;
+			top: 2px;
+		}
+		
+		&:after {
+			content: '';
+			width: 19px;
+			height: 13px;
+			background: url(images/icon_check.png) no-repeat center ;
+			position: absolute;
+			left: -2px;
+   			top: -2px;
+			@include transition(all);
+			opacity: 0;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+    }
+    input[type="checkbox"]:checked + label {
+		&:after {
+			opacity: 1;
+		}
+	}
+	
+	a {
+		color: $color_text;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+    
+    .feedback-form-bot {
+		padding-top: 5px;
+		position: relative;
+		margin-top: 18px;
+		float: left;
+		text-align: left;
+		font-size: 14px;
+		line-height: 19px;
+    }
+
+
+    .uformTools {
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 0px;
+		padding-bottom: 0px;
+		margin-right: 10px;
+		margin-bottom: 30px;
+		.uFormButton {
+			float: none;
+			padding: 0;
+			width: auto;
+		}
+	}
+    
+    button[type="submit"], button[type="reset"], .gUniForm .uFormSubmit, .gUniFormSuccessButton {
+	    margin-right: 0;
+	    //margin-bottom: 20px;
+	    padding: 0 30px 0 30px;
+	    //width: calc(33.3% - 13px);//280px;
+	    height: 46px;
+	    line-height: 46px;
+	    font-family: $font_family_os;
+	    font-size: 16px;
+		font-weight: 600;
+		//letter-spacing: 0.05em;
+	    background: #0057FF;
+	    color: #fff;
+	    cursor: pointer;
+	    box-sizing: border-box;
+	    @include transition(all);
+	    border: 0;
+	    border-radius: 10px;
+	    text-align: center;
+	    position: relative;
+	    vertical-align: middle;
+		text-decoration: none;
+		float: right;
+	    
+	    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	    -webkit-tap-highlight-color: transparent; 
+	
+		&:hover {
+			background: #4685FF;
+		}
+		
+		&:focus {
+			background: #72A2FF;
+		}
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    
+}
+
+// @media screen and (max-width: 1400px) {
+    
+// }
+@media screen and (max-width: 1300px) {
+    
+}
+
+@media screen and (max-width: 1100px) {
+    
+}
+
+@media screen and (max-width: 1000px) {
+	
+}
+
+@media screen and (max-width: 900px) {
+	
+}
+@media screen and (max-width: 800px) {
+	.form_block {
+		input[type=text] {
+			height: 45px;
+			font-size: 14px;
+			line-height: 25px;
+		}
+		textarea {
+			height: 160px;
+		}
+		input[type=checkbox]:not(checked) + label {
+			padding-left: 20px;
+		}
+		button[type=submit], 
+		button[type=reset], 
+		.gUniForm .uFormSubmit, 
+		.gUniFormSuccessButton {
+			height: 37px;
+			line-height: 36px;
+			font-size: 14px;
+		}
+	}
+}
+
+@media screen and (max-width: 600px) {
+    .form_block {
+		.input_text {
+			width: calc(100% - 20px);
+			float: none;
+		}
+		.textarea {
+			margin-left: 10px;
+		}
+		textarea {
+			height: 150px;
+		}
+	}
+}
+
+
+/* end forms styles */

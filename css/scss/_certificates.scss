@@ -1,0 +1,173 @@
+/* start certificates styles */ 
+// .text_certificates {
+//     float: left;
+//     width: 45%;
+// }
+.certificates_slider, .certificates_slider2 {
+    //margin-left: 48%;
+    overflow: hidden;
+	.slick-list {
+        margin: 0px -25px 0px;
+        padding: 25px 0 45px;
+        //overflow: visible;
+	}
+	.certificate {
+		box-sizing: border-box;
+        margin: 0 25px;
+        //border-radius: 5px;
+        position: relative;
+        //height: 408px;
+        min-height: 100%;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            width: 98%;
+            height: 98%;
+            left: 1%;
+            top: 1%;
+            background: linear-gradient(0deg, #FC00FF 0%, #0057FF 100%);
+            filter: blur(10px);
+            border-radius: 10px;
+            //transform: rotate(-90deg);
+            //opacity: 0;
+            @include transition(all);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: #fff;
+            box-sizing: border-box;
+            //box-shadow: 0px 0px 10px rgba(61, 127, 255, 0.3);
+            //border-radius: 10px;
+            z-index: 1;
+
+
+        }
+
+		a {
+			display: block;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            //overflow: hidden;
+			img {
+				width: 100%;
+                display: inline-block;
+                //height: 408px;
+            }
+            
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                background: rgba(18, 64, 151, 0.5);
+                @include transition(all);
+                opacity: 0;
+            }
+    
+            &::after {
+                content: '';
+                position: absolute;
+                z-index: 3;
+                width: 58px;
+                height: 58px;
+                left: 50%;
+                top: 50%;
+                margin: -28px 0 0 -30px;
+                @include transition(all);
+                opacity: 0;
+                background:  url(images/loupe4.png) no-repeat center top / 100% auto;
+            }
+
+            &:hover {
+                &::before, &::after {
+                    opacity: 1;
+                }
+            }
+		}
+	}
+}
+
+.certificates_slider2 {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1600px) {
+    // .certificates_slider {
+	// 	.certificate {
+	// 		a {
+	// 			.img {
+	// 				padding: 12px 20px;
+	// 				height: 400px;
+	// 				line-height: 375px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+}
+@media screen and (max-width: 1300px) {
+    .certificates_slider {
+        .slick-list {
+            margin: 0px -20px 0px;
+        }
+        .certificate {
+            margin: 0 20px;
+            
+            &::before {
+                filter: blur(8px);
+            }
+        }
+    }
+}
+@media screen and (max-width: 1030px) {
+    .certificates_slider {
+        .slick-list {
+            margin: 0px -15px 0px;
+        }
+        .certificate {
+            margin: 0 15px;
+            &::before {
+                filter: blur(7px);
+            }
+        }
+    }
+}
+@media screen and (min-width: 800px) {
+    .text_certificates {
+        float: left;
+        width: 45%;
+    }
+    .certificates_slider {
+        margin-left: 48%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .certificates_slider {
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 40px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .certificates_slider {
+        max-width: 250px;
+    }
+}
+
+
+/* end certificates styles */ 

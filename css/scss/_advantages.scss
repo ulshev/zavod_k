@@ -3,7 +3,7 @@
 #advantages {
     //background: #fff;
     .page_width {
-        padding-top: 94px;
+        //padding-top: 94px;
         padding-bottom: 35px;
     }
 
@@ -11,10 +11,16 @@
         margin-bottom: 0;
     }
 }
+#index #advantages {
+    .page_width {
+        padding-top: 94px;
+    }
+}
 
 .advantages_slider {
     margin-bottom: 19px;
     overflow: hidden;
+    clear: both;
 
     .slick-list {
         padding: 14px 0 10px;
@@ -108,8 +114,13 @@
 @media screen and (max-width: 1300px) {
     #advantages {
         .page_width {
-            padding-top: 70px;
+            //padding-top: 70px;
             padding-bottom: 35px;
+        }
+    }
+    #index #advantages {
+        .page_width {
+            padding-top: 70px;
         }
     }
 }
@@ -117,8 +128,13 @@
 @media screen and (max-width: 1030px) {
     #advantages {
         .page_width {
-            padding-top: 50px;
+            //padding-top: 50px;
             padding-bottom: 15px;
+        }
+    }
+    #index #advantages {
+        .page_width {
+            padding-top: 50px;
         }
     }
     .advantages_slider {
@@ -141,7 +157,7 @@
 }
 
 @media screen and (max-width: 800px) {
-    #advantages {
+    #index #advantages {
         .page_width {
             padding-top: 40px;
         }
@@ -156,8 +172,13 @@
 @media screen and (max-width: 600px) {
     #advantages {
         .page_width {
-            padding-top: 20px;
+            //padding-top: 20px;
             padding-bottom: 5px;
+        }
+    }
+    #index #advantages {
+        .page_width {
+            padding-top: 20px;
         }
     }
 }

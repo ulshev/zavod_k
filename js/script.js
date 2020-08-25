@@ -53,22 +53,6 @@ $(document).ready(function() {
 	$('input,textarea').blur(function(){
 	    $(this).attr('placeholder',$(this).data('placeholder'));
 	});
-
-	// $(window).on('load scroll resize', function(){
-	// 	//var height = $(window).height() - 100;
-	// 	if($(this).scrollTop() > 40) {
-	// 	    $('#header').addClass('scroll');
-	// 	} else {
-	// 	    $('#header').removeClass('scroll');
-	// 	} 
-	// });
-
-	// $(".menu").on("click","a", function (event) {
-    //     event.preventDefault();
-    //     var id  = $(this).attr('href'),
-    //         top = $(id).offset().top - 100;
-    //     $('body,html').animate({scrollTop: top}, 1000);
-	// });
 	
 	// 
 	$('.main_menu > ul > li').each(function(){
@@ -79,12 +63,12 @@ $(document).ready(function() {
 		};
 	});
 
-	if ( window.innerWidth < 601 ) {
+	if ( window.innerWidth > 600 ) {
 	    $('.main_menu .submenu > a').on('click', function(e){
 		    if( !$(this).parent().hasClass('show') ) {
 				$(this).parent().addClass('show');  
 				$(this).parent().children('ul').slideDown(500);
-			e.preventDefault();
+				e.preventDefault();
 		    }else{
 				$(this).parent().removeClass('show'); 
 				$(this).parent().children('ul').slideUp(500);
@@ -92,31 +76,13 @@ $(document).ready(function() {
 			}
 	    });
 	};
-	
-	// $('.plus').click(function(){
-	// 	if ($(this).parent().children('.description').css("display") == "block") {
-	// 	    $(this).parent().children('.description').slideUp(300);
-	// 	    $(this).removeClass('active');
-	// 	}else{
-	// 	    $('.description').slideUp(500);
-	// 	    $('.plus').removeClass('active');
-	// 	    $(this).parent().children('.description').slideDown(300);
-	// 	    $(this).addClass('active');
-	// 	}
-	// });
 
 	
 	// animation
 	if ( window.innerWidth>0 ) {
 		$('.main_section').toggleClass("hidden");
-		//$('#index #header').addClass('hidden');
 		$('#main_slide').addClass('animated');
-		//$('#header').addClass('animated');
 	};
-	// setTimeout (function(){
-	//  	$('#index #header').addClass('animated');
-		
-	// }, 0); 
 	$(window).on('load scroll', function(){
 	    $('.main_section').each(function(){
 		if ( $(this).offset().top < ($(document).scrollTop() + window.innerHeight*0.6 ) ) {
@@ -135,35 +101,7 @@ $(document).ready(function() {
 	    
 	});
 
-	
-	var elem = $('#main_screen'),
-	pos = elem.offset(),
-	elem_left = pos.left,
-	elem_top = pos.top,
-	elem_width = elem.width(),
-	elem_height = elem.height(),
-	x_center,
-	y_center;
 
-
-	$('#main_screen .slide').mousemove(function(e){
-
-		x_center = ( elem_width / 2 ) - ( e.pageX - elem_left );
-		//y_center = ( elem_height / 2 ) - ( e.pageY - elem_top );
-
-		$('.layer').each(function(){
-
-		var speed = $(this).attr('data-speed'),
-			xPos = Math.round(-1*x_center/40*speed),
-			yPos = 0; //Math.round(-1*y_center/40*speed);
-
-		// if (yPos < 0)
-		//   yPos = -2*speed;
-	
-		$(this).css('transform', 'translate3d('+xPos+'px, '+yPos+'px, 0px)');
-
-		});
-	});
 
 	
 	$('#banner_slider .main_slider').slick({
@@ -422,39 +360,46 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-	$('.certificates').slick({
-	    slidesToShow: 3,
+	$('.certificates_slider').slick({
+	    slidesToShow: 2,
 	    slidesToScroll: 1,
 	    arrows: true,
-	    dots: false,
+		dots: true,
+		//centerMode: true,
+		//variableWidth: true,
+		//infinite: true,
 	    //fade: true,
 	    prevArrow: '<span class="slick-prev">&nbsp;</span>',
 		nextArrow: '<span class="slick-next">&nbsp;</span>',
 		responsive: [
+			// {
+			// 	breakpoint: 601,
+			// 	settings: {
+			// 	  slidesToShow: 2,
+			// 	}
+			// },
 			{
-				breakpoint: 1001,
+				breakpoint: 451,
 				settings: {
-				  slidesToShow: 2,
+				  slidesToShow: 1,
+				  //slidesToScroll: 1,
 				}
 			},
-			{
-				breakpoint: 801,
-				settings: {
-				  slidesToShow: 3,
-				}
-			},
+		]
+	});
+
+	$('.certificates_slider2').slick({
+	    slidesToShow: 3,
+	    slidesToScroll: 1,
+	    arrows: true,
+		dots: true,
+		//centerMode: true,
+		//variableWidth: true,
+		//infinite: true,
+	    //fade: true,
+	    prevArrow: '<span class="slick-prev">&nbsp;</span>',
+		nextArrow: '<span class="slick-next">&nbsp;</span>',
+		responsive: [
 			{
 				breakpoint: 601,
 				settings: {
@@ -465,9 +410,197 @@ $(document).ready(function() {
 				breakpoint: 451,
 				settings: {
 				  slidesToShow: 1,
+				  //slidesToScroll: 1,
 				}
 			},
 		]
+	});
+
+	$('.manufacture_slider').slick({
+	    slidesToShow: 4,
+	    slidesToScroll: 1,
+	    infinite: true,
+	    dots: false,
+	    //focusOnSelect: true,
+	    arrows: true,
+		prevArrow: '<span class="slick-prev">&nbsp;</span>',
+		nextArrow: '<span class="slick-next">&nbsp;</span>',
+		responsive: [
+			{
+				breakpoint: 1301,
+				settings: {
+				  slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 751,
+				settings: {
+				  slidesToShow: 2,
+				}
+			},
+			
+			{
+				breakpoint: 451,
+				settings: {
+				  slidesToShow: 1,
+				}
+			},
+		]
+	});
+
+	$('.galery_slider').slick({
+	    slidesToShow: 4,
+	    slidesToScroll: 1,
+	    infinite: true,
+	    dots: true,
+	    //focusOnSelect: true,
+	    arrows: true,
+		prevArrow: '<span class="slick-prev">&nbsp;</span>',
+		nextArrow: '<span class="slick-next">&nbsp;</span>',
+		responsive: [
+			{
+				breakpoint: 1301,
+				settings: {
+				  slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 801,
+				settings: {
+				  slidesToShow: 2,
+				}
+			},
+			
+			{
+				breakpoint: 451,
+				settings: {
+				  slidesToShow: 1,
+				}
+			},
+		]
+	});
+	$('.filter').on('click', function(){
+		$('.galery_slider')
+		.slick('slickUnfilter')
+		.slick('slickFilter', $(`.${$(this).data('goods')}`).closest('.slick-slide'));
+	});
+	$('.filter_all').on('click', function(){
+		$('.galery_slider').slick('slickUnfilter');
+	});
+
+	$('.galery_filter .button').click(function(){
+			$('.button').removeClass('active');
+			$(this).addClass('active');
+	});
+
+
+
+	$('.images_slider').slick({
+	    slidesToShow: 1,
+	    slidesToScroll: 1,
+	    infinite: true,
+	    dots: true,
+	    //focusOnSelect: true,
+	    arrows: true,
+		prevArrow: '<span class="slick-prev">&nbsp;</span>',
+		nextArrow: '<span class="slick-next">&nbsp;</span>',
+	});
+
+
+
+	$('.project_images .main_img').slick({
+	    slidesToShow: 1,
+	    slidesToScroll: 1,
+	    arrows: false,
+	    fade: true,
+	    //variableWidth: true,
+	    adaptiveHeight: true,
+	    asNavFor: '.project_images .small_images',
+	    responsive: [
+		  {
+		    breakpoint: 451,
+		    settings: {
+		      arrows: true,
+		      prevArrow: '<span class="slick-prev">&nbsp;</span>',
+		      nextArrow: '<span class="slick-next">&nbsp;</span>',
+		    }
+		  },
+		]
+	  });
+	$('.project_images .small_images').slick({
+	    slidesToShow: 4,
+	    slidesToScroll: 1,
+	    arrows: true,
+	    prevArrow: '<span class="slick-prev">&nbsp;</span>',
+	    nextArrow: '<span class="slick-next">&nbsp;</span>',
+	    asNavFor: '.project_images .main_img',
+	    dots: false,
+	    //centerMode: true,
+	    //vertical: true,
+	    focusOnSelect: true,
+	    responsive: [
+		  {
+		    breakpoint: 1200,
+		    settings: {
+		      slidesToShow: 3,
+		    }
+		  },
+		  {
+		    breakpoint: 1030,
+		    settings: {
+		      slidesToShow: 2,
+		    }
+		  },
+		]
+	});
+
+	$( "#faq_accordion" )
+      .accordion({
+		heightStyle: "content",
+        header: "> div > h3"
+      })
+      .sortable({
+        axis: "y",
+        handle: "h3",
+        stop: function( event, ui ) {
+          // IE doesn't register the blur when sorting
+          // so trigger focusout handlers to remove .ui-state-focus
+          ui.item.children( "h3" ).triggerHandler( "focusout" );
+ 
+          // Refresh accordion to handle new order
+          $( this ).accordion( "refresh" );
+        }
+    });
+
+
+		
+	var elem = $('#main_screen'),
+	pos = elem.offset(),
+	elem_left = pos.left,
+	elem_top = pos.top,
+	elem_width = elem.width(),
+	elem_height = elem.height(),
+	x_center,
+	y_center;
+
+
+	$('#main_screen .slide').mousemove(function(e){
+
+		x_center = ( elem_width / 2 ) - ( e.pageX - elem_left );
+		//y_center = ( elem_height / 2 ) - ( e.pageY - elem_top );
+
+		$('.layer').each(function(){
+
+			var speed = $(this).attr('data-speed'),
+				xPos = Math.round(-1*x_center/40*speed),
+				yPos = 0; //Math.round(-1*y_center/40*speed);
+
+			// if (yPos < 0)
+			//   yPos = -2*speed;
+		
+			$(this).css('transform', 'translate3d('+xPos+'px, '+yPos+'px, 0px)');
+
+		});
 	});
 
 });

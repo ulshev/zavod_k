@@ -41,15 +41,14 @@
     .page_width {
 		z-index: 1;
 		padding-top: 21px;
-		padding-bottom: 5px;
+		padding-bottom: 26px;
 		@include transition(all);
     }
 
 
     nav {
 		clear: left;
-		padding: 0px 200px 0 0px;
-		padding: 0;
+		padding: 0px 210px 0 0px;
 		@include transition(all);
 		position: relative;
 		text-align: left;
@@ -356,7 +355,7 @@ header .button {
     	    height: 0px;
     	    z-index: 0;
 			margin-left: 15px;
-			vertical-align: 3px;
+			vertical-align: 2px;
     	    border-top: 6px solid #fff;
     	    border-left: 4px solid transparent;
 			border-right: 4px solid transparent;
@@ -367,8 +366,7 @@ header .button {
 		&.show {
 			> a {
 				&:after {
-					transform: rotate(135deg);
-					vertical-align: -1 px;
+					transform: rotate(-180deg);
 				}
 	    	}
 		}
@@ -394,6 +392,9 @@ header .button {
 		> a {
 			padding: 13px 0px 12px 0px;
 			width: 100%;
+			&:hover {
+				color: #fff;
+			}
 		}
 
 		> a::before {
@@ -447,12 +448,9 @@ header .button {
 		}
 		a {
 			display: block;
-			//padding: 20px 20px 18px;
 			position: relative;
 			z-index: 1;
 			color: #B9D0D0;
-			//border-bottom: 0;
-			//background-color: #fff;
 		}
 	
 		.active a, a.active, a:hover  {
@@ -528,7 +526,10 @@ header .button {
 		padding-right: 270px;
 	}
 }
-@media screen and (max-width: 1400px) {	
+@media screen and (max-width: 1300px) {	
+	#header .page_width {
+		padding-bottom: 16px;
+	}
 	.top_menu .menu_top2 {
 		display: none;
 	}
@@ -538,7 +539,7 @@ header .button {
 	}
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1200px) {
 	.top_menu .menu_top1 {
 		display: none;
 	}
@@ -546,6 +547,9 @@ header .button {
 		display: block;
 		width: auto;
 	}
+}
+
+@media screen and (max-width: 1280px) {
 	.main_menu ul ul {
 		padding: 35px 30px 15px;
 		//columns: 3;
@@ -561,23 +565,16 @@ header .button {
 	}
 }
 
-@media screen and (max-width: 1140px) {	
-	#header_cont {
-		max-width: 200px;
-
-		.email {
-			display: none;
-		}
-		.tel {
-			margin-left: 0px;
-		}
-	}
-}
+// @media screen and (max-width: 1140px) {	
+// 	#header_cont {
+// 	}
+// }
 
 @media screen and (max-width: 1030px) {	
 	#header {
 		.page_width {
 			padding-top: 10px;
+			padding-bottom: 6px;
 		}
 	}
 	#logo {
@@ -589,11 +586,16 @@ header .button {
 	#header_cont  {
 		margin-top: 7px;
 		max-width: 300px;
+
+		.email {
+			display: none;
+		}
 		
 		.tel {
 			font-size: 20px;
 			line-height: 27px;
 			vertical-align: middle;
+			margin-left: 0px;
 		}
 		.order_call {
 			vertical-align: middle;
@@ -694,6 +696,9 @@ header .button {
 }
 
 @media screen and (max-width: 600px) {
+	#header .page_width {
+		padding-bottom: 1px;
+	}
 	#logo {
 		width: 150px;
 	}
@@ -729,6 +734,10 @@ header .button {
 			padding-bottom: 10px;
 		}
 			.catalog {
+				ul {
+					display: none !important;
+				}
+				
 				a::after {
 					display: none;
 				}
@@ -747,6 +756,8 @@ header .button {
 		width: 100%;
 		box-sizing: border-box;
 		position: absolute;
+		z-index: 2;
+		background-color: #fff;
 		top: 5px;
 		left: 0;
 		padding-bottom: 2px;
@@ -781,8 +792,8 @@ header .button {
 	}
 }
 
-@media screen and (max-width: 330px) {
+// @media screen and (max-width: 330px) {
 	
-}
+// }
 
 /* end header styles */

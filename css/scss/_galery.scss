@@ -1,0 +1,299 @@
+/* start galery styles */ 
+
+#galery {
+    padding-bottom: 70px;
+}
+
+.galery_filter {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+
+.galery_slider {
+    clear: both;
+    //margin: 0 15px 30px;
+    overflow: visible;
+    padding-top: 20px;
+    padding-bottom: 15px;
+
+    .slick-list {
+        margin: 0px -20px 20px;
+        padding: 0 10px;
+        //overflow: visible;
+        filter: drop-shadow(0px 4px 30px rgba(0, 0, 0, 0.5));
+    }
+
+    .item {
+        //float: left;
+        display: inline-block;
+        vertical-align: top;
+        width: calc(20% - 30px);
+        position: relative;
+        //color: #fff;
+        height: 310px;
+        box-sizing: border-box;
+        margin: 50px 15px;
+        transform: scale(1);
+        //filter: drop-shadow(0px 4px 50px rgba(0, 0, 0, 0.6));
+        @include transition(all);
+
+        &:hover {
+            transform: scale(1.244);
+            z-index: 2;
+        }
+    }
+
+    a {
+        display: block; 
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background: rgba(18, 64, 151, 0.8);
+            @include transition(all);
+            opacity: 0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 3;
+            width: 45px;
+            height: 45px;
+            left: 50%;
+            top: 50%;
+            margin: -43px 0 0 -36px;
+            @include transition(all);
+            background:  url(images/loupe4.png) no-repeat center top / 100% auto;
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .button {
+            position: absolute;
+            z-index: 3;
+            top: 55%;
+            left: 50%;
+            margin-left: -76px;
+            color: #fff;
+            border-color: #909CC7;
+            height: 40px;
+            line-height: 38px;
+            opacity: 0;
+        }
+
+        .h6 {
+            position: absolute;
+            z-index: 5;
+            bottom: 5px;
+            left: 30px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 25px;
+            opacity: 0;
+        }
+    
+        &:hover {
+            .button, .h6 {
+                opacity: 1;
+            }
+        }
+    }
+    .image {
+        a::after {
+            opacity: 0;
+        }
+        &:hover {
+            a::after {
+                opacity: 1;
+            }
+        }
+    }
+    .video {
+        a::after {
+            width: 58px;
+            height: 58px;
+            left: 50%;
+            top: 50%;
+            margin: -50px 0 0 -30px;
+            background:  url(images/icon_video2.png) no-repeat center top / 100% auto;
+        }
+    }
+}
+
+.imges_slider {
+    filter: drop-shadow(10px 10px 50px rgba(22, 3, 77, 0.5));
+    z-index: 2;
+    margin-bottom: -60px;
+    .slick-list {
+        margin-bottom: 30px;
+    }
+    .slick-arrow:before {
+        border-color: #767676;
+    }
+    ul.slick-dots li {
+        background-color: #767676;
+    }
+    ul.slick-dots li:hover, ul.slick-dots li.slick-active {
+        background-color: #0057FF;
+    }
+    img {
+        filter: none;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 100px) {
+    .galery_slider {
+        margin: 0 15px 30px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    
+}
+
+@media screen and (max-width: 1300px) {
+    #galery {
+        padding-bottom: 50px;
+        .page_width {
+            padding-top: 70px;
+            padding-bottom: 45px;
+        }
+    }
+}
+@media screen and (max-width: 1030px) {
+    #galery {
+        padding-bottom: 40px;
+        .page_width {
+            padding-top: 50px;
+            padding-bottom: 35px;
+        }
+        .page_width::before {
+            margin: 24px auto -25px;
+            width: calc(100% - 600px);
+            position: relative;
+            left: 0px;
+        }
+        h2 + .button {
+            border-width: 1px;
+            margin-top: 0;
+        }
+
+        .text {
+            padding-top: 10px;
+            line-height: 24px;
+
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    .galery_filter {
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+    .galery_slider {
+        margin-bottom: 20px;
+        padding-top: 0px;
+        .slick-list {
+            filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.5));
+        }
+        .item {
+            margin: 30px 10px;
+            height: 250px;
+        }
+    }
+    .manufacture_slider {
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+}
+@media screen and (max-width: 800px) {
+    #galery {
+        padding-bottom: 30px;
+        .page_width {
+            padding-top: 40px;
+            padding-bottom: 35px;
+        }
+        
+        .page_width::before {
+            display: none;
+        }
+    }
+    .galery_slider {
+        margin-bottom: 0px;
+        .slick-list {
+            filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5));
+        }
+        .item {
+            margin: 20px 10px;
+        }
+    }
+    .manufacture_slider {
+        padding-top: 0px;
+        padding-bottom: 15px;
+
+        .item {
+            height: 160px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #galery {
+        padding-bottom: 10px;
+        .page_width {
+            padding-top: 20px;
+            padding-bottom: 15px;
+        }
+    }
+    .galery_slider {
+        margin-bottom: 0px;
+        .item {
+            height: 200px;
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #galery {
+        text-align: center;
+        h2 {
+            float: none;
+        }
+        h2 + .button {
+            float: none;
+        }
+
+        .text {
+            text-align: left;
+            p {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+/* end galery styles */

@@ -1,0 +1,174 @@
+/* start contacts styles */ 
+
+.contacts_text {
+    width: calc(50% - 80px);
+    float: left;
+}
+
+.contacts_info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-top: 50px;
+    justify-content: space-between;
+
+    .icon {
+        width: 14%;
+    }
+    .col {
+        width: 37%;
+    }
+    .icon, .col {
+        margin-bottom: 50px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+
+    .small {
+        font-size: 14px;
+        color: #9A9DBE;
+        line-height: 14px;
+    }
+
+    a {
+        font-size: 18px;
+    }
+
+    .whatsapp, .viber, .whatsapp + .small, .viber + .small {
+        padding-left: 35px;
+    }
+
+    .whatsapp {
+        background: url(images/whatsapp.png) no-repeat left center;
+    }
+    .viber {
+        background: url(images/viber.png) no-repeat left center;
+    }
+
+    .whatsapp + .small {
+        margin-bottom: 10px;
+    }
+}
+.contacts_text + .feedback {
+    margin-left: 50%;
+    background: #F8F8F8;
+    border-radius: 10px;
+    padding: 50px 50px 10px;
+}
+
+.feedback.form_block {
+    .input_text {
+        clear: none;
+
+        &:nth-child(3) {
+            float: none;
+            width: auto;
+        }
+    }
+
+    .textarea {
+        margin-left: 10px;
+        label {
+			height: 95px;
+		}
+    }
+
+    textarea {
+        height: 105px;
+    }
+}
+
+
+@media screen and (max-width: 1500px) {
+    .contacts_text {
+        width: calc(50% - 30px);
+    }
+
+    .contacts_info {
+        padding-top: 40px;
+        .icon, .col {
+            margin-bottom: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .contacts_text {
+        width: calc(60% - 30px);
+    }
+
+    .contacts_info {
+        .icon {
+            width: 14%;
+        }
+        .col {
+            width: 43%;
+        }
+    }
+
+    .contacts_text + .feedback {
+        margin-left: 60%;
+        padding: 30px 20px 5px;
+    }
+}
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+    .feedback.form_block {
+        text-align: center;
+        .input_text {
+            float: none;
+            width: auto;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .contacts_text {
+        width: auto;
+        float: none;
+    }
+    .contacts_info {
+        padding-top: 20px;
+    }
+    .contacts_text + .feedback {
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 600px) {
+    .feedback.form_block {
+        text-align: center;
+        .input_text {
+            float: none;
+            width: auto;
+        }
+    }
+    .contacts_info {
+        .icon {
+            float: left;
+            width: 8%;
+            img {
+                width: 30px;
+            }
+        }
+        .col {
+            width: 46%;
+        }
+    }
+}
+@media screen and (max-width: 450px) {
+    .contacts_info {
+        display: block;
+
+        .icon {
+            float: left;
+            width: auto;
+        }
+        .col {
+            margin-left: 50px;
+            margin-bottom: 20px;
+            width: auto;
+        }
+    }
+}
+/* end contacts styles */

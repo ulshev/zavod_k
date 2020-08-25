@@ -201,6 +201,9 @@ footer {
 		.foo_menu > ul li {
 			padding-right: 0px;
 		}
+		.foo_top {
+			padding-top: 70px;
+		}
     }
 }
 
@@ -228,6 +231,9 @@ footer {
 			margin-top: -7px;
 			max-width: 210px;
 		}
+		.foo_top {
+			padding-top: 50px;
+		}
     }
 }
 
@@ -247,6 +253,9 @@ footer {
 					width: 50%;
 				}
 			}
+		}
+		.foo_top {
+			padding-top: 30px;
 		}
     }
 }
@@ -297,7 +306,6 @@ footer {
 			padding: 0px 0px 20px;
 			text-align: center;
 		}
-
 	}
 
 }

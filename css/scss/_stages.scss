@@ -62,11 +62,16 @@
             border-radius: 10px;
             z-index: 2;
         }
-        .num_block, .h5, p {
+        .num_block, .h5, p, .icon {
             position: relative;
             z-index: 5;
         }
-
+        .icon {
+            padding-top: 10px;
+            margin-bottom: 15px;
+            height: 90px;
+            box-sizing: border-box;
+        }
         .num_block {
             font-weight: 600;
             font-size: 40px;

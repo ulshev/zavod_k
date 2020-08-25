@@ -1,0 +1,183 @@
+/* start about styles */ 
+// main .page_width div.catalog {
+//     margin-top: -90px;
+// }
+div.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    padding-bottom: 30px;
+    .item {
+        position: relative;
+        margin: 0px 10px 20px;
+        width: calc(25% - 20px);
+        height: 350px;
+        vertical-align: top;
+        box-sizing: border-box;
+        color: #fff;
+        @include transition(all);
+
+        .image {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            //opacity: 0;
+
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 50%;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(0.66deg, #000000 1.58%, rgba(0, 0, 0, 0) 97.94%);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                // -webkit-transition: -webkit-transform 1s ease-out;
+                // transition: -webkit-transform 1s ease-out;
+                // -o-transition: transform 1s ease-out;
+                // transition: transform 1s ease-out;
+                // transition: transform 1s ease-out, 
+                // -webkit-transform 1s ease-out;
+                @include transition_slow(all);
+            }
+        }
+
+        .info {
+            position: relative;
+            z-index: 5;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 265px 30px 20px;
+            overflow: hidden;
+            @include transition_slow(all);
+        }
+        .h5 {
+            margin-bottom: 10px;
+            max-height: 52px;
+            min-height: 52px;
+            overflow: hidden;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        ul {
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 140%;
+            font-weight: 600;
+            max-height: 200px;
+            overflow: hidden;
+            opacity: 0;
+            @include transition_slow(all);
+            li {
+                margin-bottom: 10px;
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        .button.btn_white {
+            position: absolute;
+            bottom: -120px;
+            left: 30px;
+            float: none;
+            height: 40px;
+            line-height: 38px;
+            border: 1px solid #fff;
+            color: #fff;
+            opacity: 0;
+            @include transition_slow(all);
+        }
+
+        &:hover {
+            .info {
+                padding-top: 30px;
+                background: rgba(18, 64, 151, 0.8);
+            }
+
+            ul, .button.btn_white { opacity: 1; }
+            .image {
+    
+                img {
+                    transform: scale(1.1);
+                }
+            }
+            .h5 {
+                min-height: 30px;
+            }
+            .button.btn_white {
+                bottom: 20px;
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 1300px) {
+    div.catalog {
+        .item {
+            width: calc(33.33% - 20px);
+        }
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    div.catalog {
+        .item {
+            .info {
+                padding: 275px 20px 10px;
+            }
+            &:hover {
+                .info {
+                    padding-top: 20px;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+    div.catalog {
+        .item {
+            width: calc(50% - 20px);
+        }
+    }
+}
+@media screen and (max-width: 600px) {
+    div.catalog {
+        .item {
+            width: calc(100% - 20px);
+            height: 120px;
+            .image {
+                &::before {
+                    height: 100%;
+                }
+            }
+            .info {
+                padding-top: 30px;
+            }
+
+            &:hover {
+                height: 350px;
+                .info {
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+/* end catalog styles */ 
