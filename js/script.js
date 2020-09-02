@@ -106,9 +106,11 @@ $(document).ready(function() {
 	
 	$('#banner_slider .main_slider').slick({
 	    slidesToShow: 1,
-	    slidesToScroll: 1,
+		slidesToScroll: 1,
+		initialSlide: 6,
+		//infinite: false,
 	    arrows: true,
-	    fade: true,
+	    //fade: true,
 	    //variableWidth: true,
 	    adaptiveHeight: true,
 	    asNavFor: '#banner_slider .menu_slider',
@@ -117,13 +119,18 @@ $(document).ready(function() {
 	});
 	$('#banner_slider .menu_slider').slick({
 	    slidesToShow: 3,
-	    slidesToScroll: 1,
+		slidesToScroll: 1,
+		initialSlide: 6,
+		//infinite: false,
 	    arrows: false,
 	    asNavFor: '#banner_slider .main_slider',
 	    dots: false,
-	    //centerMode: true,
+	    centerMode: true,
 	    //vertical: true,
-	    focusOnSelect: true,
+		focusOnSelect: true,
+		speed: 500,
+		useTransform: true,
+		cssEase: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
 	});
 
 	$('.advantages_slider').slick({

@@ -1494,7 +1494,7 @@ header .button {
 /* end header styles */
 /* start main screen styles */
 #main_screen {
-  overflow: visible;
+  overflow: hidden;
   background: #000;
   height: calc(100vh - 140px);
   min-height: 500px;
@@ -1512,6 +1512,7 @@ header .button {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+  overflow: hidden;
 }
 #main_screen .image img {
   width: 110%;
@@ -1564,6 +1565,7 @@ header .button {
   width: 100%;
   height: 100% !important;
   margin: 0;
+  position: relative;
 }
 #banner_slider .main_slider .slick-prev {
   left: 50%;
@@ -1574,27 +1576,26 @@ header .button {
   margin-right: -790px;
 }
 #banner_slider .menu_slider {
-  width: 420px;
+  max-width: 820px;
   position: absolute;
   z-index: 5;
   left: 50%;
   bottom: 13px;
-  margin: 0 0 0 -210px;
-  padding: 0;
+  margin: 0 0 0 -410px;
+  padding: 70px 200px 0;
+  overflow: hidden;
 }
 #banner_slider .menu_slider .slick-list {
   margin: 0;
   overflow: visible;
-}
-#banner_slider .menu_slider .slick-track {
-  transform: none !important;
+  padding: 0 !important;
 }
 #banner_slider .menu_slider .slide {
   margin: 30px 20px 30px;
   position: relative;
   width: 100px;
   height: 100px;
-  top: 0;
+  top: 150px;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -1607,7 +1608,7 @@ header .button {
   height: 100%;
   border-radius: 50%;
   background: linear-gradient(44.12deg, #0057FF 18.93%, #FC00FF 87.37%);
-  filter: blur(30px);
+  filter: blur(20px);
 }
 #banner_slider .menu_slider .slide .image {
   width: 100%;
@@ -1618,9 +1619,17 @@ header .button {
 #banner_slider .menu_slider .slide .image img {
   width: 100%;
   height: auto;
+  position: relative;
+  left: 0;
+  bottom: auto;
+}
+#banner_slider .menu_slider .slide.slick-active {
+  top: 0px;
+  opacity: 1;
 }
 #banner_slider .menu_slider .slide.slick-current {
   transform: scale(1.3);
+  opacity: 1;
   top: -15px;
   z-index: 3;
 }
@@ -1680,9 +1689,10 @@ header .button {
   }
 
   #banner_slider .menu_slider {
-    width: 300px;
+    width: 500px;
     bottom: 0px;
-    margin: 0 0 0 -150px;
+    margin: 0 0 0 -250px;
+    padding: 70px 100px 0;
   }
   #banner_slider .menu_slider .slide {
     margin: 20px 10px 20px;
@@ -1706,9 +1716,10 @@ header .button {
   }
 
   #banner_slider .menu_slider {
-    width: 200px;
+    width: 340px;
     bottom: 0px;
-    margin: 0 0 0 -100px;
+    margin: 0 0 0 -170px;
+    padding: 70px 70px 0;
   }
   #banner_slider .menu_slider .slide {
     margin: 20px 9px 20px;
