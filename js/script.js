@@ -107,7 +107,7 @@ $(document).ready(function() {
 	$('#banner_slider .main_slider').slick({
 	    slidesToShow: 1,
 		slidesToScroll: 1,
-		initialSlide: 6,
+		initialSlide: 3,
 		//infinite: false,
 	    arrows: true,
 	    //fade: true,
@@ -120,7 +120,7 @@ $(document).ready(function() {
 	$('#banner_slider .menu_slider').slick({
 	    slidesToShow: 3,
 		slidesToScroll: 1,
-		initialSlide: 6,
+		initialSlide: 3,
 		//infinite: false,
 	    arrows: false,
 	    asNavFor: '#banner_slider .main_slider',
